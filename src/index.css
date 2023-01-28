@@ -5,9 +5,9 @@
 
 @layer base {
     li {
-      @apply  text-gray-400 hover:text-black;
+      @apply  text-gray-400 hover:text-black text-xl font-bold;
     }
     .div-menu li  {
-        @apply px-4 text-gray-500 text-xl
+        @apply px-4 text-gray-500 text-xl font-bold
     }
   }

@@ -14,8 +14,8 @@ const Navbar = () => {
   return (
     <nav className="  bg-white">
       <div className=" w-[90%]  mx-auto flex justify-between p-4 items-center  md:gap-10">
-        <div >
-          <img src={logo} alt=""  />
+        <div>
+          <img src={logo} alt="" />
         </div>
         {nav ? (
           <img
@@ -68,29 +68,32 @@ const Navbar = () => {
             </div>
           </section>
         ) : null}
-        <div className=" flex justify-between w-full items-center">
-            <ul className=" hidden md:flex div-menu ">
-              <li>
-                <a href="#">Features</a>
-              </li>
-              <li>
-                <a href="#">Company</a>
-              </li>
-              <li>
-                <a href="#">Career</a>
-              </li>
-              <li>
-                <a href="#">About</a>
-              </li>
-            </ul>
-            <div className="hidden md:flex  ">
-                  <button className=" py-4  px-3 text-gray-400 hover:text-black ">
-                    Login
-                  </button>
-                  <button type="submit" className=" border-2 rounded-md py-3 px-4  text-gray-400 hover:text-black hover:border-black">
-                    Register
-                  </button>
-            </div>
+        <div className=" hidden md:flex justify-between w-full items-center">
+          <ul className=" hidden md:flex div-menu ">
+            <li>
+              <a href="#">Features</a>
+            </li>
+            <li>
+              <a href="#">Company</a>
+            </li>
+            <li>
+              <a href="#">Career</a>
+            </li>
+            <li>
+              <a href="#">About</a>
+            </li>
+          </ul>
+          <div className="hidden md:flex  ">
+            <button className=" py-4  px-3 text-gray-400 hover:text-black ">
+              Login
+            </button>
+            <button
+              type="submit"
+              className=" border-2 rounded-md py-3 px-4  text-gray-400 hover:text-black hover:border-black"
+            >
+              Register
+            </button>
+          </div>
         </div>
       </div>
     </nav>
