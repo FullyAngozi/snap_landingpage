@@ -1,103 +1,24 @@
-import React, { useState } from "react";
-import logo from "../assets/images/logo.svg";
-import Company from "./Company";
-import Features from "./Features";
-import iconClose from "../assets/images/icon-close-menu.svg";
-import iconbar from "../assets/images/icon-menu.svg";
+import React, { useState } from 'react'
+import { logo } from '../constants';
+import { navLinks } from "../constants";
 
 const Navbar = () => {
-  const [nav, setNav] = useState(true);
-
-  const handleClick = () => {
-    setNav((nav) => !nav);
-  };
   return (
-    <nav className="  bg-white">
-      <div className=" w-[90%]  mx-auto flex justify-between p-4 items-center  md:gap-10">
-        <div>
-          <img src={logo} alt="" />
+    <nav className=' w-full flex py-6  items-center navbar bg-pink-300'>
+      <img src={logo} alt="snaplogo" className=' w-[124px] h-[32px]' />
+      <section className=' ml-10 bg-green-500 w-full flex justify-between items-center'>
+        <ul className=' sm:flex  items-center flex-1 hidden '>
+          {navLinks.map((nav, index) => (
+            <li key={nav.id} className={`font-Epilogue text-dark font-normal text-xl mr-10 ${index === navLinks.length - 1 ? "mr-0" : "mr-10"} `}><a href={`#${nav.id}`}>{nav.title}</a></li>
+          ))}
+        </ul>
+        <div className='sm:flex justify-between gap-5 hidden'>
+          <span><a href="">login</a></span>
+          <span><a href="">Register</a></span>
         </div>
-        {nav ? (
-          <img
-            src={iconbar}
-            alt="menu bar"
-            onClick={handleClick}
-            className="  cursor-pointer md:hidden"
-          />
-        ) : (
-          <img
-            src={iconClose}
-            className=" w-[24px] z-10 cursor-pointer  md:hidden "
-            alt="close menu"
-            onClick={handleClick}
-          />
-        )}
-        {!nav ? (
-          <section className=" flex flex-col  p-8 top-5 absolute bg-white h-screen right-0 w-[50%]">
-            <div className=" py-6 h-[50%]">
-              <ul className=" flex flex-col justify-around  h-full">
-                <li>
-                  <a href="#" className=" ">
-                    Features
-                  </a>
-                </li>
-                <li>
-                  <a href="#" className=" ">
-                    Company
-                  </a>
-                </li>
-                <li>
-                  <a href="#" className=" ">
-                    Career
-                  </a>
-                </li>
-                <li>
-                  <a href="#" className=" ">
-                    About
-                  </a>
-                </li>
-              </ul>
-            </div>
-            <div className=" flex flex-col ">
-              <button className=" py-4  text-gray-400 hover:text-black ">
-                Login
-              </button>
-              <button className=" border-2 rounded-md p-2  text-gray-400 hover:text-black hover:border-black">
-                Register
-              </button>
-            </div>
-          </section>
-        ) : null}
-        <div className=" hidden md:flex justify-between w-full items-center">
-          <ul className=" hidden md:flex div-menu ">
-            <li>
-              <a href="#">Features</a>
-            </li>
-            <li>
-              <a href="#">Company</a>
-            </li>
-            <li>
-              <a href="#">Career</a>
-            </li>
-            <li>
-              <a href="#">About</a>
-            </li>
-          </ul>
-          <div className="hidden md:flex  ">
-            <button className=" py-4  px-3 text-gray-400 hover:text-black ">
-              Login
-            </button>
-            <button
-              type="submit"
-              className=" border-2 rounded-md py-3 px-4  text-gray-400 hover:text-black hover:border-black"
-            >
-              Register
-            </button>
-          </div>
-        </div>
-      </div>
+      </section>
     </nav>
-  );
-};
+  )
+}
 
-export default Navbar;
+export default Navbar
